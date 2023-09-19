@@ -1,0 +1,47 @@
+
+
+syntax = "proto3";
+package gz.msgs;
+option java_package = "com.gz.msgs";
+option java_outer_classname = "KariIcdProtos";
+
+/// \ingroup gz.msgs
+/// \interface KariIcd
+/// \brief Data from an kari icd sensor
+
+import "gz/msgs/header.proto";
+
+message KariIcd
+{
+  /// \brief Optional header data
+  Header header                = 1;
+        
+    uint64 timestamp = 2;
+    double t_sec = 3;
+
+    float delt_sec = 4; 
+
+    float delx_rps = 5; 
+    float dely_rps = 6;
+    float qual = 7;
+
+    float gx_rps = 8;
+    float gy_rps = 9;
+    float gz_rps = 10;
+
+    float ax_mps2 = 11;
+    float ay_mps2 = 12;
+    float az_mps2 = 13;
+
+    float h_mtr = 14;
+
+    float mx_gauss = 15;
+    float my_gauss = 16;
+    float mz_gauss = 17;
+
+    float rsv0 = 18;
+    float rsv1 = 19;
+    float rsv2 = 20;
+    float rsv3 = 21;
+}
+
