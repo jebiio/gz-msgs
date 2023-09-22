@@ -1,5 +1,4 @@
 
-
 syntax = "proto3";
 package gz.msgs;
 option java_package = "com.gz.msgs";
@@ -16,17 +15,16 @@ message OpticalFlow
   /// \brief Optional header data
   Header header                = 1;
 
-    uint32 sensor_id = 2;
-    float pixel_flow_x_integral = 3;
-    float pixel_flow_y_integral = 4;
-    float gyro_x_rate_integral = 5;
-    float gyro_y_rate_integral = 6;
-    float gyro_z_rate_integral = 7;
-    float ground_distance_m = 8;
-    uint32 integration_timespan = 9;
-    uint32 time_since_last_sonar_update = 10;
-    uint32 frame_count_since_last_readout = 11;
-    int32 gyro_temperature = 12;
-    uint32 quality = 13;
+  int32 sensor_id            = 2;
+  int32 integration_time_us  = 3;
+  float integrated_x         = 4;
+  float integrated_y         = 5;
+  float integrated_xgyro     = 6;
+  float integrated_ygyro     = 7;
+  float integrated_zgyro     = 8;
+  float temperature          = 9;
+  int32 quality              = 10;
+  int32 time_delta_distance_us = 11;
+  float distance              = 12;
 }
 
